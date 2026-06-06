@@ -111,14 +111,13 @@ function SkillCard({ cat, ci, animDelay, isInView, animateFrom = 'bottom' }) {
   return (
     <motion.div
       {...motionProps}
-      className={`glass-card rounded-3xl border ${cat.border} card-lift h-full`}
+      className={`glass-card rounded-3xl border ${cat.border} card-lift h-full p-8 md:p-9`}
       style={{
-        padding: '2rem 2.25rem 2.25rem',
         boxShadow: '0 0 0 1px rgba(99,102,241,0.12), 0 4px 28px rgba(0,0,0,0.25)',
       }}
     >
       {/* Card header */}
-      <div className="flex items-center gap-3 mb-7">
+      <div className="flex items-center gap-3 mb-8">
         {/* Accent dot */}
         <span className={`w-2.5 h-2.5 rounded-full ${cat.accent} opacity-90 shrink-0`} />
         <h3
@@ -130,10 +129,10 @@ function SkillCard({ cat, ci, animDelay, isInView, animateFrom = 'bottom' }) {
       </div>
 
       {/* Divider */}
-      <div className="h-px bg-white/[0.06] mb-6" />
+      <div className="h-px bg-white/[0.06] mb-7" />
 
-      {/* Skill bars */}
-      <div>
+      {/* Skill bars — consistent 6px gap between each skill in the card */}
+      <div className="space-y-0">
         {cat.skills.map((skill, si) => (
           <div key={skill.name}>
             <SkillBar
@@ -192,7 +191,7 @@ export default function Skills() {
         </motion.div>
 
         {/* ── Row 1: 3D canvas + top 2 skill cards ── */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start mb-8 lg:mb-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start mb-8 lg:mb-12">
 
           {/* 3D Sphere */}
           <motion.div

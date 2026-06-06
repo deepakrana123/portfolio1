@@ -114,11 +114,11 @@ export default function Contact() {
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
             custom={0.2}
-            className="lg:col-span-2 space-y-4"
+            className="lg:col-span-2 space-y-5"
           >
             {/* Availability card */}
-            <div className="glass-strong neon-border rounded-3xl p-7 border border-indigo-500/[0.14]">
-              <div className="flex items-center gap-2.5 mb-4">
+            <div className="glass-strong neon-border rounded-3xl p-8 border border-indigo-500/[0.14]">
+              <div className="flex items-center gap-2.5 mb-5">
                 <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse shrink-0" />
                 <span className="text-emerald-400 font-semibold text-sm">Available for Work</span>
               </div>
@@ -130,20 +130,20 @@ export default function Contact() {
             </div>
 
             {/* Contact info rows */}
-            <div className="space-y-3">
+            <div className="space-y-3.5">
               {contactInfo.map(({ icon: Icon, label, value, href, gradient }, i) => (
                 <motion.div
                   key={label}
                   initial={{ opacity: 0, x: -18 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.35 + i * 0.09, ease: EASE }}
-                  className="glass-card neon-border rounded-2xl px-5 py-4 flex items-center gap-4"
+                  className="glass-card neon-border rounded-2xl px-5 py-4.5 flex items-center gap-4"
                 >
-                  <div className={`w-9 h-9 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center shrink-0 shadow-md`}>
-                    <Icon size={14} className="text-white" />
+                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center shrink-0 shadow-md`}>
+                    <Icon size={15} className="text-white" />
                   </div>
                   <div>
-                    <p className="text-[0.6rem] text-slate-600 tracking-[0.12em] uppercase mb-1 font-semibold">{label}</p>
+                    <p className="text-[0.6rem] text-slate-600 tracking-[0.12em] uppercase mb-1.5 font-semibold">{label}</p>
                     {href ? (
                       <a href={href} className="text-[0.875rem] text-slate-200 font-medium hover:text-indigo-400 transition-colors duration-200">
                         {value}
@@ -157,9 +157,9 @@ export default function Contact() {
             </div>
 
             {/* Social links */}
-            <div className="glass-card neon-border rounded-2xl px-6 py-5">
+            <div className="glass-card neon-border rounded-2xl px-6 py-6">
               <p className="text-[0.6rem] text-slate-600 tracking-[0.12em] uppercase mb-4 font-semibold">Find me on</p>
-              <div className="flex gap-2.5">
+              <div className="flex gap-3">
                 {socials.map(({ icon: Icon, href, label }) => (
                   <motion.a
                     key={label}
@@ -190,13 +190,13 @@ export default function Contact() {
               <div className="absolute top-0 right-0 w-44 h-44 bg-gradient-to-bl from-indigo-500/[0.06] to-transparent rounded-3xl pointer-events-none" />
 
               {/* Form header */}
-              <div className="flex items-center gap-3.5 mb-8">
+              <div className="flex items-center gap-4 mb-9">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shrink-0">
                   <MessageSquare size={16} className="text-white" />
                 </div>
                 <div>
                   <h4
-                    className="font-bold text-slate-100 leading-none mb-1"
+                    className="font-bold text-slate-100 leading-none mb-1.5"
                     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   >
                     Send a Message
@@ -227,11 +227,11 @@ export default function Contact() {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name + Email row */}
-                  <div className="grid md:grid-cols-2 gap-5">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-[0.65rem] text-slate-600 tracking-[0.12em] uppercase mb-2.5 font-semibold">
+                      <label className="block text-[0.65rem] text-slate-600 tracking-[0.12em] uppercase mb-3 font-semibold">
                         Your Name
                       </label>
                       <input
@@ -245,7 +245,7 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-[0.65rem] text-slate-600 tracking-[0.12em] uppercase mb-2.5 font-semibold">
+                      <label className="block text-[0.65rem] text-slate-600 tracking-[0.12em] uppercase mb-3 font-semibold">
                         Email Address
                       </label>
                       <input
@@ -262,7 +262,7 @@ export default function Contact() {
 
                   {/* Subject */}
                   <div>
-                    <label className="block text-[0.65rem] text-slate-600 tracking-[0.12em] uppercase mb-2.5 font-semibold">
+                    <label className="block text-[0.65rem] text-slate-600 tracking-[0.12em] uppercase mb-3 font-semibold">
                       Subject
                     </label>
                     <input
@@ -278,7 +278,7 @@ export default function Contact() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-[0.65rem] text-slate-600 tracking-[0.12em] uppercase mb-2.5 font-semibold">
+                    <label className="block text-[0.65rem] text-slate-600 tracking-[0.12em] uppercase mb-3 font-semibold">
                       Message
                     </label>
                     <textarea
@@ -292,27 +292,29 @@ export default function Contact() {
                     />
                   </div>
 
-                  {/* Submit */}
-                  <motion.button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
-                    whileHover={{ scale: status === 'loading' ? 1 : 1.02, y: status === 'loading' ? 0 : -1 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    {status === 'loading' ? (
-                      <>
-                        <Loader size={14} className="animate-spin" />
-                        Sending…
-                      </>
-                    ) : (
-                      <>
-                        <Send size={14} />
-                        Send Message
-                        <ArrowRight size={13} />
-                      </>
-                    )}
-                  </motion.button>
+                  {/* Submit — extra top margin to separate from last field */}
+                  <div className="pt-1">
+                    <motion.button
+                      type="submit"
+                      disabled={status === 'loading'}
+                      className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
+                      whileHover={{ scale: status === 'loading' ? 1 : 1.02, y: status === 'loading' ? 0 : -1 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {status === 'loading' ? (
+                        <>
+                          <Loader size={14} className="animate-spin" />
+                          Sending…
+                        </>
+                      ) : (
+                        <>
+                          <Send size={14} />
+                          Send Message
+                          <ArrowRight size={13} />
+                        </>
+                      )}
+                    </motion.button>
+                  </div>
                 </form>
               )}
             </div>

@@ -36,20 +36,21 @@ export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
   return (
-    <footer className="relative pt-16 pb-10 overflow-hidden">
-      <div className="divider mb-14" />
+    <footer className="relative pt-20 pb-12 overflow-hidden">
+      {/* Top divider with comfortable breathing room above content */}
+      <div className="divider mb-16" />
 
       <div className="container-xl">
         {/* ── Main row ── */}
-        <div className="grid md:grid-cols-3 gap-10 mb-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-14">
 
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="relative w-8 h-8 shrink-0">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="relative w-9 h-9 shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Code2 size={14} className="text-white z-10" />
+                  <Code2 size={15} className="text-white z-10" />
                 </div>
               </div>
               <span
@@ -59,15 +60,15 @@ export default function Footer() {
                 Devendra.dev
               </span>
             </div>
-            <p className="text-slate-600 text-sm leading-[1.75] max-w-[200px]">
+            <p className="text-slate-600 text-sm leading-[1.8] max-w-[220px]">
               Building premium digital experiences with modern web technologies.
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <p className="text-[0.6rem] text-slate-600 tracking-[0.12em] uppercase mb-5 font-semibold">Navigation</p>
-            <div className="grid grid-cols-2 gap-y-3 gap-x-4">
+            <p className="text-[0.6rem] text-slate-600 tracking-[0.12em] uppercase mb-6 font-semibold">Navigation</p>
+            <div className="grid grid-cols-2 gap-y-4 gap-x-6">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
@@ -82,8 +83,8 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <p className="text-[0.6rem] text-slate-600 tracking-[0.12em] uppercase mb-5 font-semibold">Connect</p>
-            <div className="flex gap-2 mb-6">
+            <p className="text-[0.6rem] text-slate-600 tracking-[0.12em] uppercase mb-6 font-semibold">Connect</p>
+            <div className="flex gap-3 mb-7">
               {socials.map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}
@@ -91,7 +92,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 glass rounded-xl flex items-center justify-center text-slate-600 hover:text-slate-300 transition-colors duration-200 border border-white/[0.05]"
+                  className="w-10 h-10 glass rounded-xl flex items-center justify-center text-slate-600 hover:text-slate-300 transition-colors duration-200 border border-white/[0.05]"
                   whileHover={{ scale: 1.12, y: -2 }}
                   whileTap={{ scale: 0.92 }}
                 >
@@ -111,8 +112,8 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="divider mb-6" />
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="divider mb-8" />
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
           <p className="text-slate-700 text-xs tracking-[0.08em] uppercase">
             © 2026 Devendra · All rights reserved
           </p>
@@ -121,7 +122,7 @@ export default function Footer() {
           </p>
           <motion.button
             onClick={scrollToTop}
-            className="w-9 h-9 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center text-white shadow-md shadow-indigo-500/20"
+            className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center text-white shadow-md shadow-indigo-500/20"
             whileHover={{ scale: 1.12, y: -2 }}
             whileTap={{ scale: 0.92 }}
             aria-label="Scroll to top"

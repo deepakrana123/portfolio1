@@ -157,17 +157,17 @@ export default function About() {
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
             custom={0.3}
-            className="py-4"
+            className="py-4 flex flex-col justify-center"
           >
             <h3
-              className="text-slate-100 mb-6"
+              className="text-slate-100 mb-7"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               Building the future,{' '}
               <span className="text-gradient">one commit at a time</span>
             </h3>
 
-            <p className="text-slate-400 text-[0.9375rem] leading-[1.85] mb-6 max-w-[520px]">
+            <p className="text-slate-400 text-[0.9375rem] leading-[1.85] mb-5 max-w-[520px]">
               I'm a full-stack developer with{' '}
               <span className="text-indigo-400 font-medium">4+ years of experience</span> crafting
               scalable web applications. My expertise spans Python-based backends (FastAPI, Django)
@@ -181,9 +181,7 @@ export default function About() {
             </p>
 
             {/* Highlight cards */}
-            <div className="space-y-3.5 mb-10"style={{
-              marginTop:"5px"
-            }}>
+            <div className="space-y-4 mb-10">
               {highlights.map((item, i) => (
                 <motion.div
                   key={i}
@@ -191,9 +189,7 @@ export default function About() {
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.5 + i * 0.1, duration: 0.65, ease: EASE }}
                   className="flex items-start gap-5 glass-card neon-border rounded-2xl px-6 py-5"
-                   style={{
-                    marginTop:"4px"
-                   }}>
+                >
                   <div
                     className={`text-xl font-black leading-none ${item.color} shrink-0 pt-0.5 min-w-[3rem]`}
                     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
@@ -211,9 +207,6 @@ export default function About() {
               className="btn-primary inline-flex group"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              style={{
-                marginTop:"2px"
-              }}
             >
               <User size={14} />
               Let's Connect

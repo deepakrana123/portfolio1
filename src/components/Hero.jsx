@@ -154,10 +154,7 @@ export default function Hero() {
           </motion.div>
 
           {/* 6 ── Social links */}
-          <motion.div {...anim(0.5)} className="flex items-center gap-4 mb-12" style={{
-            marginTop:"8px",
-            marginBottom:"8px"
-          }}>
+          <motion.div {...anim(0.5)} className="flex items-center gap-4 mb-10">
             {socialLinks.map(({ icon: Icon, href, label }) => (
               <motion.a
                 key={label}
@@ -183,7 +180,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.62, ease: EASE }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-3"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4"
           >
             {stats.map((stat, i) => (
               <motion.div
@@ -192,10 +189,10 @@ export default function Hero() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.7 + i * 0.07, duration: 0.55, ease: EASE }}
                 whileHover={{ y: -3 }}
-                className="glass-card neon-border rounded-2xl px-3 py-5 text-center cursor-default"
+                className="glass-card neon-border rounded-2xl px-3 py-5 sm:py-6 text-center cursor-default"
               >
                 <div
-                  className={`text-[1.5rem] font-black leading-none mb-2 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}
+                  className={`text-[1.5rem] font-black leading-none mb-2.5 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}
                   style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   {stat.value}

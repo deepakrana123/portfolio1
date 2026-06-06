@@ -51,9 +51,7 @@ export default function Navbar() {
       }`}
     >
       {/* Use same container-xl so navbar aligns with page content */}
-      <div className="container-xl flex items-center justify-between " style={{
-        marginTop:"10px"
-      }}>
+      <div className="container-xl flex items-center justify-between">
 
         {/* Logo */}
         <motion.a
@@ -120,7 +118,7 @@ export default function Navbar() {
         </div>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-3 mt-4">
+        <div className="hidden md:flex items-center gap-3">
           <motion.a
             href="#contact"
             className="btn-primary text-sm"

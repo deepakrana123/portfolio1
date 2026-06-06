@@ -93,7 +93,7 @@ function ExperienceCard({ exp, index, isInView }) {
       <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${exp.gradient} opacity-50`} />
 
       {/* Header row */}
-      <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+      <div className="flex flex-wrap items-start justify-between gap-4 mb-7">
         <div className="flex items-start gap-4">
           <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br ${exp.gradient} flex items-center justify-center shrink-0 shadow-md`}>
             <Briefcase size={16} className="text-white" />
@@ -128,7 +128,7 @@ function ExperienceCard({ exp, index, isInView }) {
       </div>
 
       {/* Achievements */}
-      <ul className="space-y-3 mb-6">
+      <ul className="space-y-3.5 mb-7">
         {exp.achievements.map((item, i) => (
           <li key={i} className="flex items-start gap-3 text-[0.875rem] text-slate-400 leading-[1.75]">
             <ChevronRight size={12} className="text-indigo-400 mt-[3px] shrink-0" />
@@ -138,11 +138,11 @@ function ExperienceCard({ exp, index, isInView }) {
       </ul>
 
       {/* Tech tags */}
-      <div className="flex flex-wrap gap-1.5 pt-5 border-t border-white/[0.05]">
+      <div className="flex flex-wrap gap-2 pt-5 border-t border-white/[0.05]">
         {exp.tech.map((t) => (
           <span
             key={t}
-            className="px-2.5 py-1 text-[0.6875rem] glass rounded-lg text-slate-500 border border-white/[0.05] font-medium leading-none"
+            className="px-3 py-1.5 text-[0.6875rem] glass rounded-lg text-slate-500 border border-white/[0.05] font-medium leading-none"
           >
             {t}
           </span>
@@ -208,10 +208,10 @@ export default function Experience() {
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}
               custom={0.3}
-              className="glass-card neon-border rounded-3xl p-7"
+              className="glass-card neon-border rounded-3xl p-8"
             >
               <h4
-                className="font-bold text-slate-100 mb-6 flex items-center gap-2.5"
+                className="font-bold text-slate-100 mb-7 flex items-center gap-2.5"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shrink-0">
@@ -219,17 +219,17 @@ export default function Experience() {
                 </div>
                 Education
               </h4>
-              <div className="space-y-5">
+              <div className="space-y-6">
                 <div>
-                  <p className="text-slate-200 font-semibold text-sm mb-1">B.S. Computer Science</p>
+                  <p className="text-slate-200 font-semibold text-sm mb-1.5">B.S. Computer Science</p>
                   <p className="text-indigo-400 text-sm font-medium">UC Berkeley</p>
-                  <p className="text-slate-600 text-xs mt-1.5">2016 – 2020 · GPA 3.8 / 4.0</p>
+                  <p className="text-slate-600 text-xs mt-2">2016 – 2020 · GPA 3.8 / 4.0</p>
                 </div>
                 <div className="divider" />
                 <div>
-                  <p className="text-slate-200 font-semibold text-sm mb-1">Minor in Mathematics</p>
+                  <p className="text-slate-200 font-semibold text-sm mb-1.5">Minor in Mathematics</p>
                   <p className="text-indigo-400 text-sm font-medium">UC Berkeley</p>
-                  <p className="text-slate-600 text-xs mt-1.5">Focus: Algorithms & Data Structures</p>
+                  <p className="text-slate-600 text-xs mt-2">Focus: Algorithms & Data Structures</p>
                 </div>
               </div>
             </motion.div>
@@ -240,10 +240,10 @@ export default function Experience() {
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}
               custom={0.4}
-              className="glass-card neon-border rounded-3xl p-7"
+              className="glass-card neon-border rounded-3xl p-8"
             >
               <h4
-                className="font-bold text-slate-100 mb-6 flex items-center gap-2.5"
+                className="font-bold text-slate-100 mb-7 flex items-center gap-2.5"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center shrink-0">
@@ -251,13 +251,13 @@ export default function Experience() {
                 </div>
                 Certifications
               </h4>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {certifications.map((cert) => (
-                  <div key={cert.name} className="flex items-start gap-3">
-                    <div className={`w-1.5 h-1.5 rounded-full ${cert.dot} mt-[5px] shrink-0`} />
+                  <div key={cert.name} className="flex items-start gap-3.5">
+                    <div className={`w-1.5 h-1.5 rounded-full ${cert.dot} mt-[6px] shrink-0`} />
                     <div>
                       <p className={`text-sm font-semibold ${cert.color} leading-snug`}>{cert.name}</p>
-                      <p className="text-slate-600 text-xs mt-0.5">{cert.issuer} · {cert.year}</p>
+                      <p className="text-slate-600 text-xs mt-1">{cert.issuer} · {cert.year}</p>
                     </div>
                   </div>
                 ))}

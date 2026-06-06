@@ -97,7 +97,7 @@ function ProjectCard({ project, index }) {
         <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500 rounded-3xl pointer-events-none`} />
 
         {/* Top row */}
-        <div className="flex items-start justify-between mb-6">
+        <div className="flex items-start justify-between mb-7">
           <div className={`w-11 h-11 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center shadow-lg shrink-0`}>
             <Icon size={18} className="text-white" />
           </div>
@@ -124,7 +124,7 @@ function ProjectCard({ project, index }) {
         </div>
 
         {/* Content */}
-        <div className="flex-1 mb-6">
+        <div className="flex-1 mb-7">
           <div className="flex items-start gap-2.5 mb-2">
             <h3
               className="text-[1rem] font-bold leading-snug text-slate-100"
@@ -138,26 +138,26 @@ function ProjectCard({ project, index }) {
               </span>
             )}
           </div>
-          <p className="text-[0.8125rem] text-slate-500 leading-snug mb-3 font-medium">{project.subtitle}</p>
+          <p className="text-[0.8125rem] text-slate-500 leading-snug mb-3.5 font-medium">{project.subtitle}</p>
           <p className="text-[0.875rem] text-slate-400 leading-[1.75]">{project.description}</p>
         </div>
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-1.5 mb-5">
+        {/* Tags — more padding so they're comfortably clickable */}
+        <div className="flex flex-wrap gap-2 mb-6">
           {project.tags.slice(0, 4).map((tag) => (
-            <span key={tag} className="px-2.5 py-1 text-[0.68rem] leading-none tracking-wide glass rounded-lg text-slate-500 border border-white/5 font-medium">
+            <span key={tag} className="px-3 py-1.5 text-[0.68rem] leading-none tracking-wide glass rounded-lg text-slate-500 border border-white/5 font-medium">
               {tag}
             </span>
           ))}
           {project.tags.length > 4 && (
-            <span className="px-2.5 py-1 text-[0.68rem] leading-none tracking-wide glass rounded-lg text-slate-600 border border-white/5">
+            <span className="px-3 py-1.5 text-[0.68rem] leading-none tracking-wide glass rounded-lg text-slate-600 border border-white/5">
               +{project.tags.length - 4}
             </span>
           )}
         </div>
 
         {/* Stats */}
-        <div className="flex items-center gap-4 pt-4 border-t border-white/5">
+        <div className="flex items-center gap-5 pt-4 border-t border-white/5">
           <div className="flex items-center gap-1.5 text-slate-600 text-xs leading-none tracking-wide">
             <Star size={11} className="text-yellow-500/70" />
             <span>{project.stats.stars}</span>
@@ -218,13 +218,13 @@ export default function Projects() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
-          className="flex flex-wrap justify-center gap-2.5 mb-12 md:mb-14"
+          className="flex flex-wrap justify-center gap-3 mb-14 md:mb-16"
         >
           {filters.map((filter) => (
             <motion.button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-2.5 rounded-xl text-sm font-semibold leading-none tracking-wide transition-all duration-300 ${
+              className={`px-6 py-3 rounded-xl text-sm font-semibold leading-none tracking-wide transition-all duration-300 ${
                 activeFilter === filter
                   ? 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg shadow-indigo-500/20'
                   : 'glass-card text-slate-400 hover:text-white border border-white/5 hover:border-white/10'
@@ -245,7 +245,7 @@ export default function Projects() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.35 }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7"
           >
             {filtered.map((project, i) => (
               <ProjectCard key={project.id} project={project} index={i} />
@@ -258,7 +258,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-12 md:mt-14"
+          className="text-center mt-14 md:mt-16"
         >
           <motion.a
             href="https://github.com"
